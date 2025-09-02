@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import perfumeRouter from "./perfume.routes";
 
 const router = Router();
 
@@ -21,6 +22,8 @@ router.get("/health", (req: Request, res: Response) => {
 // router.use("/users", userRoutes);
 // router.use("/auth", authRoutes);
 // router.use("/search", searchRoutes);
+
+router.use("/perfume", perfumeRouter);
 
 // Catch-all route for undefined endpoints
 router.all("*", (req: Request, res: Response) => {

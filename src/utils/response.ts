@@ -13,6 +13,21 @@ export const sendSuccess = (
   });
 };
 
+export const sendPaginationSuccess = (
+  res: Response,
+  data: any,
+  message = "Success",
+  statusCode = 200
+) => {
+  const { docs, ...rest } = data;
+  return res.status(statusCode).json({
+    success: true,
+    message,
+    data: docs,
+    pagination: { ...rest },
+  });
+};
+
 export const sendError = (
   res: Response,
   error: unknown,
