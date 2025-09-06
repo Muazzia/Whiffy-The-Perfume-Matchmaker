@@ -8,5 +8,5 @@ export const errorHandler = (
   next: NextFunction
 ) => {
   console.error("❌ Error:", err.message);
-  return sendError(res, err, "Internal Server Error", 500);
+  return sendError(res, err, err.message, 500);
 };

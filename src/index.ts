@@ -1,3 +1,4 @@
+import "express-async-errors"; // Must be imported FIRST
 import app from "./app";
 import { config } from "./config";
 import connectDB from "./db/connection";

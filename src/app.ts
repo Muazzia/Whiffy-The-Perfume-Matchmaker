@@ -12,6 +12,7 @@ app.use(express.json());
 // Routes
 app.use("/api", routes);
 
+// Error handling middleware (must be AFTER routes)
 app.use(errorHandler);
 
 export default app;
