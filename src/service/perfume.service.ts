@@ -10,4 +10,14 @@ const getPerfumeById = async (id: string) => {
   return perfume;
 };
 
-export { getAllPerfumes, getPerfumeById };
+const getAllMatchingPerfumes = async (
+  { page = 1, limit = 10 },
+  query: string
+) => {
+  const matchingPerfumes = await Perfume.find({
+    name: { $regex: query, $options: "i" },
+  }).paginate({ page, limit });
+  return matchingPerfumes;
+};
+
+export { getAllPerfumes, getPerfumeById, getAllMatchingPerfumes };
