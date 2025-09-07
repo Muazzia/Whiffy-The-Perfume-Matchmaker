@@ -50,6 +50,8 @@ export interface PerfumeDocument extends mongoose.Document {
     middle: string[];
     base: string[];
   };
+
+  allNotes: string[];
 }
 
 export interface PerfumeModel<T extends mongoose.Document>
