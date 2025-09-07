@@ -3,5 +3,5 @@ dist/
 .env
 *.log
 
-perfumes_500.json
-seed.ts
+perfumes.json
+see.ts
